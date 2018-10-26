@@ -40,7 +40,7 @@ vector<edge> g[MAXN];
 int n,m,x,y;
 int sp[MAXN];
 
-void dijkstra(){
+void dijkstra(){ //este es  el dijkstra pino
 	FOR(i,0,n) sp[i]=INF; //inicializa en INF el largo de todos los caminos minimos.
 	priority_queue<int> pq;
 	int v=0;
