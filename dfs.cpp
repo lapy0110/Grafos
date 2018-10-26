@@ -32,6 +32,12 @@ typedef vector<ii> vii;
 #define ms(obj,val) memset(obj,val,sizeof(obj))
 #define debug true
 #define dprintf debug && printf
+
+const int INF = 0x3f3f3f3f;
+const ll INFLL = 1e18;
+const int MAXN = 1e6+5;
+const int MOD = 1e9+7;
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 int n,m; //n nodos y m aristas
@@ -45,8 +51,6 @@ void dfs(int v){ // este es el que tal pino
     }
   }
 }
-
-using namespace std;
 
 int main(){
   rii(n,m);
