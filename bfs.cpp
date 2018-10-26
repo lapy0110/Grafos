@@ -37,33 +37,38 @@ const ll INFLL = 1e18;
 const int MAXN = 1e6+5;
 const int MOD = 1e9+7;
 
-ll a,b;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+int n,m;
+vector<int> g[200000];
+int visit[20000];
+
+void bfs(){
+	queue<int> q;
+	q.push(0);
+	while(!q.empty()){
+		int v = q.front();
+		q.pop();
+		if(visit[v]) continue;
+		visit[v]=1;
+		for(int u:g[v]){
+			if(!visit[u]){
+				q.push(u);
+			}
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
 int main(){
 	
-	lrii(a,b); // a <= b
-	a--;
-
-	printf("%d\n", (-7)%3);
-
-	/*if(a+1 == b){
-		a++;
-		ll ans = 0;
-		for(ll i = 1; i*i<a; i++) if(a%i == 0) {ans += i; if(a/i != i) ans += a/i;} 
-		printf("%lld\n",ans);
-		return 0;
-	}*/
-
-	ll A = 0, B = 0, C = 0;	
-	ll lim = min(b-a+1,a+1); 
-	FOR(i,1,lim) C += (a%i-b%i);
-	A = (b-a)*(a - lim + 1);
-	FOR(i,a+1,b+1) B += b%i;
-	printf("%lld %lld %lld\n",A, B, C);
-	ll ans = (b+a)*(b-a) - A - B + C;
-
-	printf("%lld\n",ans);
-
+	rii(n,m);
+	FOR(i,0,m){
+		int a,b;
+		rii(a,b);
+		g[a].pb(b);
+		g[b].pb(a);
+	}
 
 	return 0;
 }
