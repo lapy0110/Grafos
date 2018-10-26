@@ -42,6 +42,7 @@ const int MOD = 1e9+7;
 
 int n,m; //n nodos y m aristas
 vector<int> g[200000]; //vector para guardar el grafo
+int visit[200000]; //marca los nodos como visitados por el dfs
 
 void dfs(int v){ // este es el que tal pino
   visit[v]=1;
