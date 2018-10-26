@@ -1,2 +1,2 @@
 # Grafos
-Repo para guardar funciones relacionadas a grafos 
+Repo para guardar algoritmos relacionadas a grafos 
