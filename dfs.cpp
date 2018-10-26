@@ -1,8 +1,22 @@
-//aqui va el dfs
-#include <iostream>
-#include <vector>
+//la cague pq agregue el dfs a la rama principal jeje, le agregue paja de la plantilla
+#include<iostream>
+#include<stdio.h>
+#include<vector>
+#include<stack>
+#include<queue>
+#include<set>
+#include<map>
+#include<string>
+#include<cstring>
+#include<algorithm>
+#include<math.h>
 
 using namespace std;
+
+typedef long long ll;
+typedef pair<int,int> ii;
+typedef vector<int> vi;
+typedef vector<ii> vii;
 
 #define FOR(i,n,m) for(ll i=n; i<m; i++) //un #define es basicamente una sustitucion textual jeje para codear mas fast
 #define ROF(i,n,m) for(int i=n; i>m; i--)
@@ -18,13 +32,14 @@ using namespace std;
 #define ms(obj,val) memset(obj,val,sizeof(obj))
 #define debug true
 #define dprintf debug && printf
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 int n,m; //n nodos y m aristas
 vector<int> g[200000]; //vector para guardar el grafo
 
 void dfs(int v){ // este es el que tal pino
   visit[v]=1;
-  for(int u:g[v]){
+  for(int u:g[v]){ //este es un for especial de c++, que es de pinga
     if(!visit[u]){
       dfs(u);
     }
