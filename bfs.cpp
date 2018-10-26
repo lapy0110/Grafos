@@ -39,21 +39,21 @@ const int MOD = 1e9+7;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int n,m;
-vector<int> g[200000];
-int visit[20000];
+int n,m; //nodos y aristas
+vector<int> g[200000]; //aqui guardo el grafo
+int visit[20000]; // marco nodos como visitados por el bfs
 
-void bfs(){
-	queue<int> q;
-	q.push(0);
-	while(!q.empty()){
-		int v = q.front();
+void bfs(){ // este es el que talco pino jajaja
+	queue<int> q; //cola pero no de prioridad, normalita pues
+	q.push(0); //insertar en la cola el nodo por donde comienza el recorrido  del que talco
+	while(!q.empty()){ //mientras haya nodos en cola sigo
+		int v = q.front();//saco un nodo de la cola
 		q.pop();
 		if(visit[v]) continue;
 		visit[v]=1;
-		for(int u:g[v]){
+		for(int u:g[v]){ //y veo sus vecinos
 			if(!visit[u]){
-				q.push(u);
+				q.push(u);//pongo en cola los nos visitados
 			}
 		}
 	}
